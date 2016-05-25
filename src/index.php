@@ -20,7 +20,7 @@ if (file_exists(__DIR__ . '/storage/orders.log')) {
 }
 
 // $orderRepository = new CsvOrderRepository('orders.log');
-$orderRepository = new DatabaseOrderRepository();
+$orderRepository = new DatabaseOrderRepository(new DatabaseConnector('homestead', 'secret'));
 $main = new Main($orderRepository);
 
 $order = new Order(1, 100);
