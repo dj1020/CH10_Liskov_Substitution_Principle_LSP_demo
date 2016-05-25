@@ -11,7 +11,7 @@ class CsvOrderRepository implements OrderRepositoryInterface {
 
     public function logOrder(Order $order)
     {
-        $fp = fopen($this->logFile, 'w');
+        $fp = fopen($this->logFile, 'a');
         fputcsv($fp, [
             'id' => $order->id,
             'amount' => $order->amount,

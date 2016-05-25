@@ -14,8 +14,17 @@ class Main {
     }
 }
 
-$orderRepository = new CsvOrderRepository('orders.log');
-$order = new Order(1, 100);
+// delete orders.log
+unlink(__DIR__ . '/storage/orders.log');
 
+$orderRepository = new CsvOrderRepository('orders.log');
 $main = new Main($orderRepository);
+
+$order = new Order(1, 100);
 $main->process($order);
+
+$order2 = new Order(2, 200);
+$main->process($order2);
+
+$order3 = new Order(3, 300);
+$main->process($order3);
