@@ -15,7 +15,7 @@ class Main {
 }
 
 $orderRepository = new CsvOrderRepository('orders.log');
-$main = new Main($orderRepository);
-$order = new Order();
+$order = new Order(1, 100);
 
+$main = new Main($orderRepository);
 $main->process($order);
