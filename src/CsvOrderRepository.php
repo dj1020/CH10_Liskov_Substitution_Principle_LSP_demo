@@ -1,5 +1,5 @@
 <?php namespace Twk;
 
-class CsvOrderRepository {
+class CsvOrderRepository implements OrderRepositoryInterface {
 
 }
