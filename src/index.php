@@ -10,7 +10,11 @@ class Main {
 
     public function process(Order $order)
     {
-       $this->orders->logOrder($order);
+        if ($this->orders instanceof DatabaseOrderRepository) {
+            $this->orders->connect('homestead', 'secret');
+        }
+
+        $this->orders->logOrder($order);
     }
 }
 
