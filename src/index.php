@@ -15,9 +15,12 @@ class Main {
 }
 
 // delete orders.log
-unlink(__DIR__ . '/storage/orders.log');
+if (file_exists(__DIR__ . '/storage/orders.log')) {
+    unlink(__DIR__ . '/storage/orders.log');
+}
 
-$orderRepository = new CsvOrderRepository('orders.log');
+// $orderRepository = new CsvOrderRepository('orders.log');
+$orderRepository = new DatabaseOrderRepository();
 $main = new Main($orderRepository);
 
 $order = new Order(1, 100);
