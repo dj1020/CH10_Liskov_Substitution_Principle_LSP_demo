@@ -1,6 +1,8 @@
 {
     "name": "twinkledj/ch10_lsp_demo",
-    "require": {},
+    "require": {
+        "fzaninotto/faker": "^1.6"
+    },
     "autoload": {
         "psr-4" : {
             "Twk\\" : "src/"
