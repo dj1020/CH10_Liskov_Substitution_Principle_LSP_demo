@@ -1,0 +1,9 @@
+{
+    "name": "twinkledj/ch10_lsp_demo",
+    "require": {},
+    "autoload": {
+        "psr-4" : {
+            "Twk\\" : "src/"
+        }
+    }
+}
